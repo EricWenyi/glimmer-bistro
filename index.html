@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glimmer Bistro — Valentine's Dinner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FAF3E8;
+            --wine: #722F37;
+            --wine-light: #8B3A42;
+            --gold: #C9A962;
+            --gold-light: #D4B978;
+            --charcoal: #2C2C2C;
+            --warm-gray: #6B6058;
+            --blush: #E8C4C4;
+            --olive: #6B705C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(180deg, var(--wine) 0%, #5C2028 60%, #3D1520 100%);
+            color: var(--cream);
+            position: relative;
+            padding: 2rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 30%, rgba(201, 169, 98, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-ornament {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5em;
+            opacity: 0.7;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.3em;
+            line-height: 1.1;
+        }
+
+        .hero .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 2rem;
+        }
+
+        .hero .date {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--blush);
+            opacity: 0.9;
+        }
+
+        .hero .date span {
+            display: block;
+            font-size: 0.85em;
+            margin-top: 0.3em;
+            opacity: 0.7;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 2rem;
+            color: var(--gold);
+            opacity: 0.5;
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            animation: gentle-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes gentle-pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+
+        /* Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            color: var(--gold);
+            opacity: 0.6;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            width: 60px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        /* Menu Section */
+        .menu-section {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .menu-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .menu-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: var(--wine);
+            letter-spacing: 0.05em;
+        }
+
+        .menu-header .menu-subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--warm-gray);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+        }
+
+        /* Course */
+        .course {
+            margin-bottom: 4rem;
+        }
+
+        .course-label {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .course-emoji {
+            font-size: 1.5rem;
+        }
+
+        .course-type {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .course-type-it {
+            font-weight: 300;
+            font-style: italic;
+            color: var(--warm-gray);
+            letter-spacing: 0.15em;
+        }
+
+        .course h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 3.5vw, 2rem);
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 0.2em;
+            line-height: 1.3;
+        }
+
+        .course .dish-italian {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--wine-light);
+            margin-bottom: 1rem;
+            letter-spacing: 0.02em;
+        }
+
+        .course .description {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--warm-gray);
+            font-weight: 300;
+        }
+
+        .course .description p {
+            margin-bottom: 0.6em;
+        }
+
+        .course .highlight {
+            display: inline-block;
+            margin-top: 1rem;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--wine);
+            opacity: 0.8;
+            border-left: 2px solid var(--gold);
+            padding-left: 1rem;
+        }
+
+        /* Pairing note */
+        .pairing {
+            margin-top: 1.2rem;
+            padding: 1rem 1.2rem;
+            background: rgba(114, 47, 55, 0.04);
+            border-radius: 4px;
+            font-size: 0.95rem;
+            color: var(--warm-gray);
+            font-style: italic;
+        }
+
+        .pairing strong {
+            color: var(--wine);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--wine);
+            color: var(--cream);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .footer h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer p {
+            font-weight: 300;
+            font-size: 1.05rem;
+            color: var(--blush);
+            line-height: 1.6;
+        }
+
+        .footer .heart {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .menu-section {
+                padding: 3rem 1.5rem;
+            }
+            .course {
+                margin-bottom: 3rem;
+            }
+        }
+
+        /* Fade-in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-ornament">✦ ✦ ✦</div>
+        <h1>Glimmer Bistro</h1>
+        <p class="subtitle">An Italian Valentine's Evening</p>
+        <p class="date">
+            February 14, 2026
+            <span>Una Serata per Due</span>
+        </p>
+        <div class="scroll-hint">↓ View Menu ↓</div>
+    </section>
+
+    <!-- Menu -->
+    <section class="menu-section">
+        <div class="menu-header fade-in">
+            <h2>The Menu</h2>
+            <p class="menu-subtitle">Il Menù della Sera</p>
+        </div>
+
+        <!-- Bread -->
+        <article class="course fade-in">
+            <div class="course-label">
+                <span class="course-emoji">🥖</span>
+                <span class="course-type">Bread <span class="course-type-it">· Pane</span></span>
+            </div>
+            <h3>Toasted Ciabatta with Garlic</h3>
+            <p class="dish-italian">Ciabatta Tostata all'Aglio</p>
+            <div class="description">
+                <p>Rustic Italian ciabatta, sliced thick and toasted to a golden crust. Each slice is gently rubbed with fresh garlic while still warm — subtle, but essential.</p>
+                <p>Served throughout the evening, as every proper Italian meal should have bread at the table.</p>
+            </div>
+        </article>
+
+        <div class="divider fade-in">✦</div>
+
+        <!-- Antipasto -->
+        <article class="course fade-in">
+            <div class="course-label">
+                <span class="course-emoji">🍅</span>
+                <span class="course-type">Appetizer <span class="course-type-it">· Antipasto</span></span>
+            </div>
+            <h3>Caprese Bruschetta with Burrata</h3>
+            <p class="dish-italian">Bruschetta Caprese con Burrata</p>
+            <div class="description">
+                <p>Toasted ciabatta topped with ripe tomatoes, hand-torn burrata, fresh basil, extra virgin olive oil, and a whisper of balsamic glaze.</p>
+                <p>Creamy, bright, and beautiful — the perfect first impression.</p>
+            </div>
+            <p class="highlight">Your first visual moment of the evening.</p>
+        </article>
+
+        <div class="divider fade-in">✦</div>
+
+        <!-- Primo -->
+        <article class="course fade-in">
+            <div class="course-label">
+                <span class="course-emoji">🍝</span>
+                <span class="course-type">First Course <span class="course-type-it">· Primo</span></span>
+            </div>
+            <h3>Spaghetti with Clams & White Wine</h3>
+            <p class="dish-italian">Spaghetti alle Vongole</p>
+            <div class="description">
+                <p>Spaghetti tossed with fresh clams, white wine, garlic, chili flakes, and a finish of parsley. Clean, elegant, and deeply satisfying.</p>
+                <p>A restrained, restaurant-caliber course — bright acidity to contrast the creamy burrata that came before.</p>
+            </div>
+            <div class="pairing">
+                <strong>Note:</strong> Intentionally light — saving room for the main event.
+            </div>
+        </article>
+
+        <div class="divider fade-in">✦</div>
+
+        <!-- Secondo -->
+        <article class="course fade-in">
+            <div class="course-label">
+                <span class="course-emoji">🍖</span>
+                <span class="course-type">Main Course <span class="course-type-it">· Secondo</span></span>
+            </div>
+            <h3>Braised Veal Shanks, Milan Style</h3>
+            <p class="dish-italian">Osso Buco alla Milanese</p>
+            <div class="description">
+                <p>Cross-cut veal shanks braised low and slow until meltingly tender, served with creamy mashed potatoes. Finished tableside with a bright gremolata of lemon zest, garlic, and fresh parsley.</p>
+                <p>Warm, comforting, and deeply intentional — the kind of dish that says you were worth the effort.</p>
+            </div>
+            <p class="highlight">The heart of the evening.</p>
+        </article>
+
+        <div class="divider fade-in">✦</div>
+
+        <!-- Dolce -->
+        <article class="course fade-in">
+            <div class="course-label">
+                <span class="course-emoji">🍮</span>
+                <span class="course-type">Dessert <span class="course-type-it">· Dolce</span></span>
+            </div>
+            <h3>Classic Tiramisu</h3>
+            <p class="dish-italian">Tiramisù</p>
+            <div class="description">
+                <p>Layers of espresso-soaked ladyfingers and mascarpone cream, dusted with cocoa. Prepared the night before, so every layer has had time to become one.</p>
+                <p>Soft, bittersweet, and the perfect ending to an evening made with care.</p>
+            </div>
+            <p class="highlight">Some things are better when they've had time to come together.</p>
+        </article>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+        <h3>Glimmer Bistro</h3>
+        <div class="heart">♥</div>
+        <p>
+            Cooked with love.<br>
+            <em>Cucinato con amore.</em>
+        </p>
+    </section>
+
+    <script>
+        // Fade-in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
