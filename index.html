@@ -38,32 +38,23 @@
             overflow-x: hidden;
         }
 
-        /* ═══ SCATTERED DOTS (Sacramento style) ═══ */
+        /* ═══ DOTS ═══ */
         .dots-layer {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
+            position: fixed; inset: 0;
+            pointer-events: none; z-index: 0; overflow: hidden;
         }
-
         .dot {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.35;
+            position: absolute; border-radius: 50%; opacity: 0.35;
         }
 
         /* ═══ SIDEBAR ═══ */
         .sidebar {
-            position: fixed;
-            top: 0; left: 0;
-            width: 250px;
-            height: 100vh;
+            position: fixed; top: 0; left: 0;
+            width: 250px; height: 100vh;
             background: var(--warm-white);
             border-right: 1px solid rgba(0,0,0,0.04);
             z-index: 100;
-            display: flex;
-            flex-direction: column;
+            display: flex; flex-direction: column;
             padding: 2.5rem 0;
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -77,59 +68,45 @@
 
         .sidebar-brand h1 {
             font-family: 'Sacramento', cursive;
-            font-size: 2.2rem;
-            font-weight: 400;
+            font-size: 2.2rem; font-weight: 400;
             color: var(--charcoal);
         }
 
         .sidebar-brand .tagline {
             font-family: 'Josefin Sans', sans-serif;
-            font-size: 0.6rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: var(--rose);
+            font-size: 0.6rem; letter-spacing: 0.3em;
+            text-transform: uppercase; color: var(--rose);
             margin-top: 0.2rem;
         }
 
         .sidebar-nav {
-            flex: 1;
-            padding: 0 1.5rem;
-            list-style: none;
+            flex: 1; padding: 0 1.5rem;
+            list-style: none; overflow-y: auto;
         }
 
         .sidebar-nav li { margin-bottom: 0.15rem; }
 
-        .sidebar-nav a {
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            padding: 0.6rem 0.9rem;
-            text-decoration: none;
-            color: var(--warm-gray);
+        .sidebar-nav .nav-section {
             font-family: 'Josefin Sans', sans-serif;
-            font-size: 0.72rem;
-            font-weight: 300;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            font-size: 0.55rem; font-weight: 400;
+            letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--light-gray);
+            padding: 1rem 0.9rem 0.4rem;
         }
 
-        .sidebar-nav a:hover {
-            color: var(--charcoal);
-            background: var(--sage-pale);
+        .sidebar-nav a {
+            display: flex; align-items: center; gap: 0.7rem;
+            padding: 0.55rem 0.9rem;
+            text-decoration: none; color: var(--warm-gray);
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 0.72rem; font-weight: 300;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            border-radius: 8px; transition: all 0.3s ease;
         }
 
-        .sidebar-nav a.active {
-            color: var(--charcoal);
-            background: var(--rose-pale);
-        }
-
-        .sidebar-nav .nav-emoji {
-            font-size: 0.95rem;
-            width: 1.3rem;
-            text-align: center;
-        }
+        .sidebar-nav a:hover { color: var(--charcoal); background: var(--sage-pale); }
+        .sidebar-nav a.active { color: var(--charcoal); background: var(--rose-pale); }
+        .sidebar-nav .nav-emoji { font-size: 0.95rem; width: 1.3rem; text-align: center; }
 
         .sidebar-footer {
             padding: 1.2rem 1.5rem;
@@ -139,61 +116,41 @@
 
         .sidebar-footer p {
             font-family: 'Josefin Sans', sans-serif;
-            font-size: 0.65rem;
-            color: var(--light-gray);
+            font-size: 0.65rem; color: var(--light-gray);
             letter-spacing: 0.1em;
         }
 
-        /* ═══ MOBILE TOGGLE ═══ */
+        /* ═══ MOBILE ═══ */
         .menu-toggle {
-            display: none;
-            position: fixed;
-            top: 1rem; left: 1rem;
-            z-index: 200;
+            display: none; position: fixed;
+            top: 1rem; left: 1rem; z-index: 200;
             width: 42px; height: 42px;
             background: var(--white);
             border: 1px solid rgba(0,0,0,0.06);
-            border-radius: 50%;
-            cursor: pointer;
-            align-items: center;
-            justify-content: center;
+            border-radius: 50%; cursor: pointer;
+            align-items: center; justify-content: center;
             box-shadow: 0 2px 12px rgba(0,0,0,0.06);
         }
 
         .menu-toggle span {
-            display: block;
-            width: 16px;
-            height: 1.5px;
-            background: var(--charcoal);
-            margin: 3px auto;
-            transition: 0.3s;
+            display: block; width: 16px; height: 1.5px;
+            background: var(--charcoal); margin: 3px auto; transition: 0.3s;
         }
 
         .sidebar-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.2);
-            z-index: 90;
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,0.2); z-index: 90;
             backdrop-filter: blur(2px);
         }
 
         /* ═══ MAIN ═══ */
-        .main {
-            margin-left: 250px;
-            position: relative;
-            z-index: 1;
-        }
+        .main { margin-left: 250px; position: relative; z-index: 1; }
 
         /* ═══ HERO ═══ */
         .hero {
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; position: relative; overflow: hidden;
             background: linear-gradient(170deg, var(--cream) 0%, var(--warm-white) 50%, var(--peach) 100%);
         }
 
@@ -202,51 +159,36 @@
         .hero h2 {
             font-family: 'Sacramento', cursive;
             font-size: clamp(4.5rem, 10vw, 8rem);
-            font-weight: 400;
-            color: var(--charcoal);
-            line-height: 1;
-            margin-bottom: 0.3rem;
+            font-weight: 400; color: var(--charcoal);
+            line-height: 1; margin-bottom: 0.3rem;
         }
 
-        /* Brush stroke underline */
-        .hero .brush-line {
-            display: block;
-            width: 200px;
-            height: 6px;
-            margin: 0.8rem auto 2rem;
-            border-radius: 3px;
+        .brush-line {
+            display: block; width: 200px; height: 6px;
+            margin: 0.8rem auto 2rem; border-radius: 3px;
             background: linear-gradient(90deg, transparent, var(--rose), var(--rose-soft), transparent);
         }
 
-        .hero .hero-date {
+        .hero .hero-tagline {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            font-weight: 500; color: var(--warm-gray);
+            margin-bottom: 1rem;
+        }
+
+        .hero .hero-sub {
             font-family: 'Josefin Sans', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 200;
-            letter-spacing: 0.35em;
-            text-transform: uppercase;
-            color: var(--warm-gray);
+            font-size: 0.75rem; font-weight: 200;
+            letter-spacing: 0.3em; text-transform: uppercase;
+            color: var(--light-gray);
         }
 
-        .hero .hero-date em {
-            display: block;
-            margin-top: 0.4rem;
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 1.1rem;
-            letter-spacing: 0.05em;
-            color: var(--rose);
-        }
-
-        .hero .scroll-cue {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
+        .scroll-cue {
+            position: absolute; bottom: 2rem; left: 50%;
             transform: translateX(-50%);
             font-family: 'Josefin Sans', sans-serif;
-            font-size: 0.6rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: var(--light-gray);
+            font-size: 0.6rem; letter-spacing: 0.3em;
+            text-transform: uppercase; color: var(--light-gray);
             animation: float 3s ease-in-out infinite;
         }
 
@@ -255,56 +197,159 @@
             50% { transform: translateX(-50%) translateY(-6px); opacity: 0.8; }
         }
 
-        /* ═══ MENU SECTION ═══ */
-        .menu-section {
-            max-width: 780px;
-            margin: 0 auto;
+        /* ═══ SECTION SHARED ═══ */
+        .content-section {
+            max-width: 780px; margin: 0 auto;
             padding: 5rem 3rem;
         }
 
         .section-title {
-            text-align: center;
-            margin-bottom: 4.5rem;
+            text-align: center; margin-bottom: 3.5rem;
         }
 
         .section-title h2 {
             font-family: 'Caveat', cursive;
             font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 700;
-            color: var(--charcoal);
+            font-weight: 700; color: var(--charcoal);
         }
 
         .section-title .sub {
             font-family: 'Josefin Sans', sans-serif;
-            font-size: 0.65rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: var(--light-gray);
+            font-size: 0.65rem; letter-spacing: 0.3em;
+            text-transform: uppercase; color: var(--light-gray);
             margin-top: 0.3rem;
         }
 
         .section-title .dot-divider {
             margin-top: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
         }
 
         .section-title .dot-divider span {
-            width: 5px; height: 5px;
-            border-radius: 50%;
-            background: var(--sage);
-            opacity: 0.5;
+            width: 5px; height: 5px; border-radius: 50%;
+            background: var(--sage); opacity: 0.5;
         }
 
         .section-title .dot-divider span:nth-child(2) {
-            width: 7px; height: 7px;
-            background: var(--rose);
-            opacity: 0.6;
+            width: 7px; height: 7px; background: var(--rose); opacity: 0.6;
         }
 
-        /* ═══ COURSE CARD ═══ */
+        /* ═══ ABOUT / CHEF STORY ═══ */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        .story-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .story-card h3 {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem; font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .story-card p {
+            font-size: 1.05rem; line-height: 1.9;
+            color: var(--warm-gray); font-weight: 300;
+            margin-bottom: 0.8rem;
+        }
+
+        .story-card .signature {
+            font-family: 'Sacramento', cursive;
+            font-size: 1.8rem; color: var(--rose);
+            margin-top: 1rem;
+        }
+
+        .story-highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .highlight-item {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.025);
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .highlight-item:hover { transform: translateY(-3px); }
+
+        .highlight-item .hl-emoji { font-size: 2rem; margin-bottom: 0.8rem; }
+
+        .highlight-item h4 {
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem; font-weight: 600;
+            color: var(--charcoal); margin-bottom: 0.4rem;
+        }
+
+        .highlight-item p {
+            font-size: 0.9rem; line-height: 1.6;
+            color: var(--warm-gray); font-weight: 300;
+        }
+
+        /* ═══ EVENTS BANNER ═══ */
+        .event-banner {
+            background: linear-gradient(135deg, var(--rose-pale) 0%, var(--peach) 50%, var(--sage-pale) 100%);
+            padding: 4rem 3rem;
+            text-align: center;
+        }
+
+        .event-banner-inner {
+            max-width: 600px; margin: 0 auto;
+        }
+
+        .event-banner .event-tag {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 0.65rem; letter-spacing: 0.3em;
+            text-transform: uppercase; color: var(--rose);
+            margin-bottom: 0.8rem;
+        }
+
+        .event-banner h3 {
+            font-family: 'Sacramento', cursive;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 400; color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .event-banner p {
+            font-size: 1.05rem; line-height: 1.7;
+            color: var(--warm-gray); font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .event-btn {
+            display: inline-block;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 0.72rem; font-weight: 300;
+            letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--charcoal);
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            border: 1px solid var(--rose);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .event-btn:hover {
+            background: var(--rose);
+            color: var(--white);
+        }
+
+        /* ═══ VALENTINE'S MENU PAGE ═══ */
         .course {
             margin-bottom: 3.5rem;
             padding: 2.5rem;
@@ -312,8 +357,7 @@
             border-radius: 16px;
             box-shadow: 0 2px 20px rgba(0,0,0,0.03);
             border: 1px solid rgba(0,0,0,0.03);
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -322,13 +366,9 @@
             box-shadow: 0 6px 30px rgba(0,0,0,0.06);
         }
 
-        /* Colored accent stripe */
         .course::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 4px;
-            height: 100%;
+            content: ''; position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
             border-radius: 4px 0 0 4px;
         }
 
@@ -339,9 +379,7 @@
         .course.dolce::before { background: var(--blush); }
 
         .course-top {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
+            display: flex; align-items: center; gap: 0.8rem;
             margin-bottom: 0.4rem;
         }
 
@@ -349,152 +387,116 @@
 
         .course-label {
             font-family: 'Josefin Sans', sans-serif;
-            font-size: 0.65rem;
-            font-weight: 300;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
+            font-size: 0.65rem; font-weight: 300;
+            letter-spacing: 0.2em; text-transform: uppercase;
             color: var(--rose);
         }
 
         .course h3 {
             font-family: 'Caveat', cursive;
             font-size: clamp(2rem, 4vw, 2.5rem);
-            font-weight: 600;
-            color: var(--charcoal);
-            line-height: 1.3;
-            margin-bottom: 0.15rem;
+            font-weight: 600; color: var(--charcoal);
+            line-height: 1.3; margin-bottom: 0.15rem;
         }
 
         .course .italian {
-            font-style: italic;
-            font-size: 1.05rem;
-            color: var(--rose-soft);
-            margin-bottom: 1rem;
+            font-style: italic; font-size: 1.05rem;
+            color: var(--rose-soft); margin-bottom: 1rem;
             letter-spacing: 0.02em;
         }
 
         .course .desc {
-            font-size: 1rem;
-            line-height: 1.85;
-            color: var(--warm-gray);
-            font-weight: 300;
+            font-size: 1rem; line-height: 1.85;
+            color: var(--warm-gray); font-weight: 300;
         }
 
         .course .desc p { margin-bottom: 0.5em; }
 
         .course .note {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background: var(--sage-pale);
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-style: italic;
-            color: var(--sage-dot);
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            margin-top: 1rem; padding: 0.5rem 1rem;
+            background: var(--sage-pale); border-radius: 20px;
+            font-size: 0.85rem; font-style: italic; color: var(--sage-dot);
         }
 
         .course .accent {
             margin-top: 1rem;
             font-family: 'Caveat', cursive;
-            font-size: 1.25rem;
-            font-weight: 500;
+            font-size: 1.25rem; font-weight: 500;
             color: var(--rose);
         }
 
         /* ═══ QUOTE ═══ */
         .quote-section {
             background: linear-gradient(160deg, var(--sage-pale) 0%, var(--cream) 100%);
-            padding: 5rem 3rem;
-            text-align: center;
+            padding: 5rem 3rem; text-align: center;
         }
 
-        .quote-inner {
-            max-width: 550px;
-            margin: 0 auto;
-        }
+        .quote-inner { max-width: 550px; margin: 0 auto; }
 
         .quote-inner .qmark {
             font-family: 'Sacramento', cursive;
-            font-size: 5rem;
-            color: var(--sage);
-            opacity: 0.3;
-            line-height: 0.5;
+            font-size: 5rem; color: var(--sage);
+            opacity: 0.3; line-height: 0.5;
         }
 
         .quote-inner blockquote {
             font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-            font-weight: 300;
-            font-style: italic;
-            color: var(--warm-dark);
-            line-height: 1.7;
+            font-weight: 300; font-style: italic;
+            color: var(--warm-dark); line-height: 1.7;
             margin: 1.5rem 0;
         }
 
         .quote-inner .attr {
             font-family: 'Josefin Sans', sans-serif;
-            font-size: 0.65rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--light-gray);
+            font-size: 0.65rem; letter-spacing: 0.2em;
+            text-transform: uppercase; color: var(--light-gray);
         }
 
         /* ═══ FOOTER ═══ */
         .site-footer {
             background: var(--charcoal);
-            color: var(--cream);
-            text-align: center;
+            color: var(--cream); text-align: center;
             padding: 3.5rem 2rem;
         }
 
         .site-footer h3 {
             font-family: 'Sacramento', cursive;
-            font-size: 2.2rem;
-            font-weight: 400;
+            font-size: 2.2rem; font-weight: 400;
             margin-bottom: 0.3rem;
         }
 
         .site-footer .footer-dots {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            margin: 1rem 0;
+            display: flex; align-items: center;
+            justify-content: center; gap: 6px; margin: 1rem 0;
         }
 
         .site-footer .footer-dots span {
-            width: 4px; height: 4px;
-            border-radius: 50%;
-            background: var(--rose);
-            opacity: 0.5;
+            width: 4px; height: 4px; border-radius: 50%;
+            background: var(--rose); opacity: 0.5;
         }
 
         .site-footer p {
-            font-weight: 300;
-            font-size: 0.95rem;
-            color: var(--blush);
+            font-weight: 300; font-size: 0.95rem; color: var(--blush);
         }
 
         .site-footer .copy {
             margin-top: 1.5rem;
             font-family: 'Josefin Sans', sans-serif;
-            font-size: 0.6rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.15);
+            font-size: 0.6rem; letter-spacing: 0.2em;
+            text-transform: uppercase; color: rgba(255,255,255,0.15);
         }
 
-        /* ═══ FADE IN ═══ */
+        /* ═══ PAGE HIDDEN ═══ */
+        .page { display: none; }
+        .page.active { display: block; }
+
+        /* ═══ FADE ═══ */
         .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
+            opacity: 0; transform: translateY(20px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
 
         /* ═══ RESPONSIVE ═══ */
         @media (max-width: 900px) {
@@ -506,18 +508,18 @@
         }
 
         @media (max-width: 600px) {
-            .menu-section { padding: 3rem 1.2rem; }
+            .content-section { padding: 3rem 1.2rem; }
             .course { padding: 1.8rem; }
+            .story-highlights { grid-template-columns: 1fr; }
             .quote-section { padding: 3rem 1.5rem; }
+            .event-banner { padding: 3rem 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Scattered dots background -->
     <div class="dots-layer" id="dotsLayer"></div>
 
-    <!-- Mobile toggle -->
     <button class="menu-toggle" id="menuToggle" aria-label="Menu">
         <span></span><span></span><span></span>
     </button>
@@ -530,160 +532,291 @@
             <p class="tagline">Est. 2026</p>
         </div>
         <ul class="sidebar-nav">
-            <li><a href="#home" class="active"><span class="nav-emoji">✦</span> Home</a></li>
-            <li><a href="#menu"><span class="nav-emoji">📜</span> Menu</a></li>
-            <li><a href="#bread"><span class="nav-emoji">🥖</span> Pane</a></li>
-            <li><a href="#antipasto"><span class="nav-emoji">🍅</span> Antipasto</a></li>
-            <li><a href="#primo"><span class="nav-emoji">🍝</span> Primo</a></li>
-            <li><a href="#secondo"><span class="nav-emoji">🍖</span> Secondo</a></li>
-            <li><a href="#dolce"><span class="nav-emoji">🍮</span> Dolce</a></li>
-            <li><a href="#philosophy"><span class="nav-emoji">🌿</span> Philosophy</a></li>
+            <li class="nav-section">Main</li>
+            <li><a href="#" data-page="home" class="active"><span class="nav-emoji">🏠</span> Home</a></li>
+            <li><a href="#" data-page="story"><span class="nav-emoji">👨‍🍳</span> The Chef</a></li>
+            <li><a href="#" data-page="philosophy"><span class="nav-emoji">🌿</span> Philosophy</a></li>
+            <li class="nav-section">Events</li>
+            <li><a href="#" data-page="valentine"><span class="nav-emoji">💝</span> Valentine's Dinner</a></li>
         </ul>
         <div class="sidebar-footer">
-            <p>Valentine's Day 2026</p>
+            <p>San Diego, CA</p>
         </div>
     </nav>
 
     <!-- Main -->
     <div class="main">
 
-        <!-- Hero -->
-        <section class="hero" id="home">
-            <div class="hero-content fade-in">
-                <h2>Glimmer Bistro</h2>
-                <span class="brush-line"></span>
-                <p class="hero-date">
-                    February 14, 2026
-                    <em>Una Serata Italiana per Due</em>
-                </p>
-            </div>
-            <div class="scroll-cue">↓ Scroll</div>
-        </section>
+        <!-- ══════ HOME PAGE ══════ -->
+        <div class="page active" id="page-home">
+            <section class="hero">
+                <div class="hero-content fade-in">
+                    <h2>Glimmer Bistro</h2>
+                    <span class="brush-line"></span>
+                    <p class="hero-tagline">Where every meal tells a story</p>
+                    <p class="hero-sub">A Home Kitchen with Heart</p>
+                </div>
+                <div class="scroll-cue">↓ Scroll</div>
+            </section>
 
-        <!-- Menu -->
-        <section class="menu-section" id="menu">
-            <div class="section-title fade-in">
-                <h2>The Menu</h2>
-                <p class="sub">Il Menù della Sera</p>
-                <div class="dot-divider">
-                    <span></span><span></span><span></span>
+            <!-- Chef Intro -->
+            <section class="content-section">
+                <div class="section-title fade-in">
+                    <h2>Meet the Chef</h2>
+                    <p class="sub">The Person Behind the Apron</p>
+                    <div class="dot-divider"><span></span><span></span><span></span></div>
                 </div>
-            </div>
 
-            <!-- Bread -->
-            <div class="course bread fade-in" id="bread">
-                <div class="course-top">
-                    <span class="course-emoji">🥖</span>
-                    <span class="course-label">Pane · Bread</span>
+                <div class="story-grid">
+                    <div class="story-card fade-in">
+                        <h3>Hello, I'm G 👋</h3>
+                        <p>I'm not a trained chef — I'm someone who believes that the best meals come from genuine care and curiosity. Glimmer Bistro started as a simple idea: what if I turned my home kitchen into a dining experience worth remembering?</p>
+                        <p>Every dish I make is a conversation between technique I've studied and flavors I've fallen in love with. From hand-torn burrata to slow-braised osso buco, I cook the way I think food should be — with patience, good ingredients, and no shortcuts.</p>
+                        <p>This isn't a restaurant. It's an invitation to my table.</p>
+                        <div class="signature">— G</div>
+                    </div>
                 </div>
-                <h3>Toasted Ciabatta with Garlic</h3>
-                <p class="italian">Ciabatta Tostata all'Aglio</p>
-                <div class="desc">
-                    <p>Rustic Italian ciabatta, sliced thick and toasted golden. Each slice gently rubbed with fresh garlic while still warm — subtle, fragrant, essential.</p>
-                    <p>One bread that threads through the entire meal: beneath the burrata, beside the pasta, dipped into the braising jus.</p>
-                </div>
-                <div class="note">🌿 The quiet backbone of an Italian table</div>
-            </div>
 
-            <!-- Antipasto -->
-            <div class="course antipasto fade-in" id="antipasto">
-                <div class="course-top">
-                    <span class="course-emoji">🍅</span>
-                    <span class="course-label">Antipasto · Appetizer</span>
+                <div class="story-highlights fade-in">
+                    <div class="highlight-item">
+                        <div class="hl-emoji">🇮🇹</div>
+                        <h4>Italian Soul</h4>
+                        <p>Inspired by the simplicity and honesty of Italian home cooking</p>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="hl-emoji">🌿</div>
+                        <h4>Fresh & Seasonal</h4>
+                        <p>Local ingredients, sourced with care, prepared with intention</p>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="hl-emoji">❤️</div>
+                        <h4>Made with Love</h4>
+                        <p>Every meal is personal — cooked for you, not for a crowd</p>
+                    </div>
                 </div>
-                <h3>Caprese Bruschetta with Burrata</h3>
-                <p class="italian">Bruschetta Caprese con Burrata</p>
-                <div class="desc">
-                    <p>Toasted ciabatta crowned with vine-ripened tomatoes, hand-torn burrata, fresh basil, extra virgin olive oil, cracked black pepper, and a delicate drizzle of balsamic glaze.</p>
-                    <p>Creamy, bright, and impossibly beautiful — the colors of Italy on your plate.</p>
-                </div>
-                <p class="accent">✦ Your first visual moment of the evening</p>
-            </div>
+            </section>
 
-            <!-- Primo -->
-            <div class="course primo fade-in" id="primo">
-                <div class="course-top">
-                    <span class="course-emoji">🍝</span>
-                    <span class="course-label">Primo · First Course</span>
+            <!-- Event Banner -->
+            <section class="event-banner">
+                <div class="event-banner-inner fade-in">
+                    <p class="event-tag">Upcoming Event</p>
+                    <h3>Valentine's Italian Evening</h3>
+                    <p>A five-course Italian dinner for two. Hand-made with love, served with candlelight. February 14, 2026.</p>
+                    <a href="#" class="event-btn" data-page="valentine">View the Menu</a>
                 </div>
-                <h3>Spaghetti with Clams & White Wine</h3>
-                <p class="italian">Spaghetti alle Vongole</p>
-                <div class="desc">
-                    <p>Spaghetti tossed with fresh clams, dry white wine, garlic, a touch of chili, and finished with flat-leaf parsley. Clean, elegant, deeply satisfying.</p>
-                    <p>A restrained, restaurant-caliber course — bright acidity and brine to contrast the creamy richness before.</p>
-                </div>
-                <div class="note">🌿 Intentionally light — saving room for the main event</div>
-            </div>
+            </section>
 
-            <!-- Secondo -->
-            <div class="course secondo fade-in" id="secondo">
-                <div class="course-top">
-                    <span class="course-emoji">🍖</span>
-                    <span class="course-label">Secondo · Main Course</span>
+            <!-- Quote -->
+            <section class="quote-section">
+                <div class="quote-inner fade-in">
+                    <div class="qmark">"</div>
+                    <blockquote>Cooking is an act of love, a gift, a way of sharing with others the little secrets — the secrets of the heart.</blockquote>
+                    <p class="attr">Sophia Loren</p>
                 </div>
-                <h3>Braised Veal Shanks, Milan Style</h3>
-                <p class="italian">Osso Buco alla Milanese</p>
-                <div class="desc">
-                    <p>Cross-cut veal shanks braised low and slow with white wine and aromatic vegetables until fork-tender. Served over creamy mashed potatoes with a vibrant gremolata of lemon zest, garlic, and fresh parsley.</p>
-                    <p>Warm, soulful, and deeply intentional — the kind of dish that says you were worth every hour.</p>
-                </div>
-                <p class="accent">✦ The heart of the evening</p>
-            </div>
+            </section>
+        </div>
 
-            <!-- Dolce -->
-            <div class="course dolce fade-in" id="dolce">
-                <div class="course-top">
-                    <span class="course-emoji">🍮</span>
-                    <span class="course-label">Dolce · Dessert</span>
+        <!-- ══════ CHEF STORY PAGE ══════ -->
+        <div class="page" id="page-story">
+            <section class="content-section" style="padding-top: 6rem;">
+                <div class="section-title fade-in">
+                    <h2>The Chef's Story</h2>
+                    <p class="sub">How Glimmer Bistro Came to Be</p>
+                    <div class="dot-divider"><span></span><span></span><span></span></div>
                 </div>
-                <h3>Classic Tiramisu</h3>
-                <p class="italian">Tiramisù Classico</p>
-                <div class="desc">
-                    <p>Layers of espresso-soaked ladyfingers and silky mascarpone cream, dusted with cocoa. Prepared the night before, so every layer has had time to become one.</p>
-                    <p>Soft, bittersweet, and effortlessly romantic — the perfect ending to an evening made with care.</p>
+
+                <div class="story-grid">
+                    <div class="story-card fade-in">
+                        <h3>It Started with a Question ✨</h3>
+                        <p>What if dinner could feel like a gift? Not a reservation at some crowded spot, but something made just for you — every detail considered, every flavor intentional.</p>
+                        <p>I grew up watching my family cook. Not professionally, but with the kind of care that makes you remember a meal twenty years later. That feeling — of being fed with love — is what I wanted to recreate.</p>
+                    </div>
+
+                    <div class="story-card fade-in">
+                        <h3>The Kitchen as a Studio 🍳</h3>
+                        <p>I approach cooking the way an artist approaches a canvas. Every meal has a palette — the deep red of a slow braise, the bright green of fresh basil, the golden crust of toasted ciabatta. I plan courses the way you'd plan movements of a symphony: contrast, rhythm, surprise.</p>
+                        <p>My kitchen is small, my ambition is not. I've spent hours perfecting a single gremolata. I've braised veal shanks at midnight. I've turned my living room into a dining room with candlelight and linen napkins.</p>
+                    </div>
+
+                    <div class="story-card fade-in">
+                        <h3>Why "Glimmer"? 💫</h3>
+                        <p>Because the best evenings have a certain glow to them. The candlelight on a wine glass. The warmth of a kitchen in full swing. The moment someone takes a first bite and their eyes light up.</p>
+                        <p>Glimmer Bistro isn't a place — it's a feeling. And I want to share it with you.</p>
+                        <div class="signature">— G</div>
+                    </div>
                 </div>
-                <p class="accent">✦ Some things are better when they've had time</p>
-            </div>
-        </section>
+            </section>
+        </div>
 
-        <!-- Quote -->
-        <section class="quote-section" id="philosophy">
-            <div class="quote-inner fade-in">
-                <div class="qmark">"</div>
-                <blockquote>Cooking is an act of love, a gift, a way of sharing with others the little secrets — the secrets of the heart.</blockquote>
-                <p class="attr">Sophia Loren</p>
-            </div>
-        </section>
+        <!-- ══════ PHILOSOPHY PAGE ══════ -->
+        <div class="page" id="page-philosophy">
+            <section class="content-section" style="padding-top: 6rem;">
+                <div class="section-title fade-in">
+                    <h2>Our Philosophy</h2>
+                    <p class="sub">What We Believe In</p>
+                    <div class="dot-divider"><span></span><span></span><span></span></div>
+                </div>
 
-        <!-- Footer -->
+                <div class="story-grid">
+                    <div class="story-card fade-in">
+                        <h3>Simplicity is Sophistication 🌱</h3>
+                        <p>The best Italian cooking doesn't hide behind complexity — it celebrates the ingredient. A perfect tomato needs nothing more than salt, olive oil, and basil. We let quality speak for itself.</p>
+                    </div>
+
+                    <div class="story-card fade-in">
+                        <h3>Time is an Ingredient ⏳</h3>
+                        <p>A good braise can't be rushed. A tiramisu needs a night to become itself. We believe in giving food the time it deserves — slow hands, patient heat, and the understanding that the best things are worth waiting for.</p>
+                    </div>
+
+                    <div class="story-card fade-in">
+                        <h3>Every Meal is Personal 💌</h3>
+                        <p>We don't cook for crowds. Every dinner at Glimmer Bistro is intimate — designed for the people at the table, with their tastes in mind. This isn't mass production. This is a love letter on a plate.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quote-section">
+                <div class="quote-inner fade-in">
+                    <div class="qmark">"</div>
+                    <blockquote>The discovery of a new dish does more for the happiness of the human race than the discovery of a star.</blockquote>
+                    <p class="attr">Jean Anthelme Brillat-Savarin</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- ══════ VALENTINE'S DINNER PAGE ══════ -->
+        <div class="page" id="page-valentine">
+            <section class="content-section" style="padding-top: 6rem;">
+                <div class="section-title fade-in">
+                    <h2>Valentine's Italian Evening</h2>
+                    <p class="sub">February 14, 2026 · Five Courses · For Two</p>
+                    <div class="dot-divider"><span></span><span></span><span></span></div>
+                </div>
+
+                <div class="course bread fade-in">
+                    <div class="course-top">
+                        <span class="course-emoji">🥖</span>
+                        <span class="course-label">Pane · Bread</span>
+                    </div>
+                    <h3>Toasted Ciabatta with Garlic</h3>
+                    <p class="italian">Ciabatta Tostata all'Aglio</p>
+                    <div class="desc">
+                        <p>Rustic Italian ciabatta, sliced thick and toasted golden. Each slice gently rubbed with fresh garlic while still warm — subtle, fragrant, essential.</p>
+                        <p>One bread that threads through the entire meal: beneath the burrata, beside the pasta, dipped into the braising jus.</p>
+                    </div>
+                    <div class="note">🌿 The quiet backbone of an Italian table</div>
+                </div>
+
+                <div class="course antipasto fade-in">
+                    <div class="course-top">
+                        <span class="course-emoji">🍅</span>
+                        <span class="course-label">Antipasto · Appetizer</span>
+                    </div>
+                    <h3>Caprese Bruschetta with Burrata</h3>
+                    <p class="italian">Bruschetta Caprese con Burrata</p>
+                    <div class="desc">
+                        <p>Toasted ciabatta crowned with vine-ripened tomatoes, hand-torn burrata, fresh basil, extra virgin olive oil, cracked black pepper, and a delicate drizzle of balsamic glaze.</p>
+                        <p>Creamy, bright, and impossibly beautiful — the colors of Italy on your plate.</p>
+                    </div>
+                    <p class="accent">✦ Your first visual moment of the evening</p>
+                </div>
+
+                <div class="course primo fade-in">
+                    <div class="course-top">
+                        <span class="course-emoji">🍝</span>
+                        <span class="course-label">Primo · First Course</span>
+                    </div>
+                    <h3>Spaghetti with Clams & White Wine</h3>
+                    <p class="italian">Spaghetti alle Vongole</p>
+                    <div class="desc">
+                        <p>Spaghetti tossed with fresh clams, dry white wine, garlic, a touch of chili, and finished with flat-leaf parsley. Clean, elegant, deeply satisfying.</p>
+                        <p>A restrained, restaurant-caliber course — bright acidity and brine to contrast the creamy richness before.</p>
+                    </div>
+                    <div class="note">🌿 Intentionally light — saving room for the main event</div>
+                </div>
+
+                <div class="course secondo fade-in">
+                    <div class="course-top">
+                        <span class="course-emoji">🍖</span>
+                        <span class="course-label">Secondo · Main Course</span>
+                    </div>
+                    <h3>Braised Veal Shanks, Milan Style</h3>
+                    <p class="italian">Osso Buco alla Milanese</p>
+                    <div class="desc">
+                        <p>Cross-cut veal shanks braised low and slow with white wine and aromatic vegetables until fork-tender. Served over creamy mashed potatoes with a vibrant gremolata of lemon zest, garlic, and fresh parsley.</p>
+                        <p>Warm, soulful, and deeply intentional — the kind of dish that says you were worth every hour.</p>
+                    </div>
+                    <p class="accent">✦ The heart of the evening</p>
+                </div>
+
+                <div class="course dolce fade-in">
+                    <div class="course-top">
+                        <span class="course-emoji">🍮</span>
+                        <span class="course-label">Dolce · Dessert</span>
+                    </div>
+                    <h3>Classic Tiramisu</h3>
+                    <p class="italian">Tiramisù Classico</p>
+                    <div class="desc">
+                        <p>Layers of espresso-soaked ladyfingers and silky mascarpone cream, dusted with cocoa. Prepared the night before, so every layer has had time to become one.</p>
+                        <p>Soft, bittersweet, and effortlessly romantic — the perfect ending to an evening made with care.</p>
+                    </div>
+                    <p class="accent">✦ Some things are better when they've had time</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer (always visible) -->
         <footer class="site-footer">
             <h3>Glimmer Bistro</h3>
             <div class="footer-dots">
                 <span></span><span></span><span></span><span></span><span></span>
             </div>
             <p>Cooked with love. <em>Cucinato con amore.</em></p>
-            <p class="copy">Valentine's Day MMXXVI</p>
+            <p class="copy">© 2026 Glimmer Bistro</p>
         </footer>
     </div>
 
     <script>
-        // ═══ Scattered dots ═══
+        // ═══ Dots ═══
         const dotsLayer = document.getElementById('dotsLayer');
-        const colors = ['#C4908A', '#AAC2A0', '#D5CCE0', '#E8D5D0', '#C8DCC0', '#F0DDD5'];
+        const colors = ['#C4908A','#AAC2A0','#D5CCE0','#E8D5D0','#C8DCC0','#F0DDD5'];
         const rand = (a, b) => Math.random() * (b - a) + a;
-
         for (let i = 0; i < 80; i++) {
-            const dot = document.createElement('div');
-            dot.className = 'dot';
-            const size = rand(3, 8);
-            dot.style.cssText = `
-                width:${size}px; height:${size}px;
-                left:${rand(2, 98)}%; top:${rand(2, 98)}%;
-                background:${colors[Math.floor(rand(0, colors.length))]};
-                opacity:${rand(0.15, 0.4)};
-            `;
-            dotsLayer.appendChild(dot);
+            const d = document.createElement('div');
+            d.className = 'dot';
+            const s = rand(3, 8);
+            d.style.cssText = `width:${s}px;height:${s}px;left:${rand(2,98)}%;top:${rand(2,98)}%;background:${colors[Math.floor(rand(0,colors.length))]};opacity:${rand(0.15,0.4)};`;
+            dotsLayer.appendChild(d);
         }
+
+        // ═══ Page navigation ═══
+        const pages = document.querySelectorAll('.page');
+        const navLinks = document.querySelectorAll('[data-page]');
+
+        function showPage(pageId) {
+            pages.forEach(p => p.classList.remove('active'));
+            const target = document.getElementById('page-' + pageId);
+            if (target) target.classList.add('active');
+
+            navLinks.forEach(l => l.classList.toggle('active', l.dataset.page === pageId));
+
+            // Re-observe fade-ins
+            window.scrollTo(0, 0);
+            setTimeout(() => {
+                document.querySelectorAll('.page.active .fade-in').forEach(el => {
+                    el.classList.remove('visible');
+                    obs.observe(el);
+                });
+            }, 50);
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                showPage(link.dataset.page);
+                if (innerWidth <= 900) closeSidebar();
+            });
+        });
 
         // ═══ Fade in ═══
         const obs = new IntersectionObserver(entries => {
@@ -691,25 +824,13 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 
-        // ═══ Active nav ═══
-        const navLinks = document.querySelectorAll('.sidebar-nav a');
-        const navObs = new IntersectionObserver(entries => {
-            entries.forEach(e => {
-                if (e.isIntersecting && e.target.id) {
-                    navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
-                }
-            });
-        }, { threshold: 0.25, rootMargin: '-15% 0px -60% 0px' });
-        document.querySelectorAll('[id]').forEach(s => navObs.observe(s));
-
         // ═══ Mobile sidebar ═══
         const toggle = document.getElementById('menuToggle');
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('overlay');
-        const close = () => { sidebar.classList.remove('open'); overlay.classList.remove('open'); };
+        function closeSidebar() { sidebar.classList.remove('open'); overlay.classList.remove('open'); }
         toggle.addEventListener('click', () => { sidebar.classList.toggle('open'); overlay.classList.toggle('open'); });
-        overlay.addEventListener('click', close);
-        navLinks.forEach(l => l.addEventListener('click', () => { if (innerWidth <= 900) close(); }));
+        overlay.addEventListener('click', closeSidebar);
     </script>
 </body>
 </html>
